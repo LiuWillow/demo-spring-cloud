@@ -1,5 +1,6 @@
 package com.lwl;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
@@ -15,7 +16,8 @@ public class ClientApplication {
 		SpringApplication.run(ClientApplication.class, args);
 	}
 
-	String port;
+	@Value("${server.port}")
+	private String port;
 	@RequestMapping("/hi")
 	public String home(){
 		return "port:" + port;
