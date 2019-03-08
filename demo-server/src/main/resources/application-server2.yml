@@ -1,0 +1,17 @@
+server:
+  port: 8762
+eureka:
+  instance:
+    hostname: server2
+    ip-address: 192.168.10.111
+  server:
+    enable-self-preservation: false   #关闭自我保护机制（指超过百分之85的服务挂了，会认为是自己的问题而不去down服务）
+    eviction-interval-timer-in-ms: 5000  #设置清理事件间隔（毫秒  默认60*1000）
+
+
+  client:
+  # 下面两个false表示该组件为server
+#    register-with-eureka: false  #不把自己作为客户端，集群下要注释，因为自己也要注册到另一个服务端
+#    fetch-registry: false #不需要从服务端获取注册信息（因为自己就是服务端），集群情况同上
+    service-url:
+      defaultZone: http://server1:8761/eureka/  #注册到另一个server上，这样两个server就额可以互相
