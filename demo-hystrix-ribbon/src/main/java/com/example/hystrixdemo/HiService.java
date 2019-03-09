@@ -19,7 +19,7 @@ public class HiService {
         return restTemplate.getForObject("http://service-hi/hi", String.class);
     }
 
-    private String hiError(){
+    public String hiError(){
         return "hi-service error";
     }
 }

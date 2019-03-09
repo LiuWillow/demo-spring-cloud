@@ -5,7 +5,7 @@
 * 4、创建`RestTemplate`Bean，在这个Bean上添加`@LoadBalanced`注解实现负载均衡，调用`restTemplate.getForObject("http://注册的服务名称/hi", 
 String.class)`即可使用其他服务
 * 5、在test中测试的时候可能会出现`java.lang.IllegalStateException: Shutdown in progress`，在Controller中不会有这个异常
-* 6、可以通过IRule指定负载均衡策略
+* 6、可以通过IRule指定负载均衡策略，也可以继承AbstractLoadBalancerRule实现自己的负载均衡算法
 ## 服务端负载均衡
 服务1通过nginx反向代理，调用服务2的过程中，服务1不知道究竟有多少个服务，负载均衡策略由nginx决定，称为服务端负载均衡
 ## 客户端负载均衡
