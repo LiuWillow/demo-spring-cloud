@@ -5,7 +5,6 @@ import com.netflix.discovery.EurekaClient;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.annotation.Order;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,12 +35,13 @@ public class ClientController {
         return "port:" + port;
     }
 
-    @HystrixCommand(fallbackMethod = "defaultStores")  //如果有异常，则调用fallbackMethod
+    @HystrixCommand(fallbackMethod = "defaultStores")   //出异常就调用defaultStores
     public Object getStores(Map<String, Object> parameters) {
-        return null;
+        //do stuff that might fail
+        return "success";
     }
 
     public Object defaultStores(Map<String, Object> parameters) {
-        return "failed";
+        return "error";
     }
 }
