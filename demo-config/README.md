@@ -7,4 +7,4 @@
 </dependency>
 ```
 * 2、`@EnableConfigServer`注解开启config功能，配置文件中配置文件的地址、路径以及分支
-* 3、访问`ip:port/field/profile`即可
+* 3、访问`ip:port/field/profile`即可，如配置文件名为app-dev.properties，则访问`ip:port/app/dev`
