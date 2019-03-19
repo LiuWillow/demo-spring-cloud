@@ -6,12 +6,13 @@ server:
   port: 8766
 spring:
   application:
-    name: service-zuul
+    name: zuul
 zuul:
   routes:
+
     api-a:
       path: /api-a/**     #api-a开头的发到service-ribbon
       serviceId: service-ribbon
     api-b:
-      path: /api-b/**      #api-b开头的发到server-feign
+      path: /api-b/**      #api-b开头的发到server-feign   /*只作用于下一层
       serviceId: service-feign
