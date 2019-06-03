@@ -10,6 +10,7 @@ import reactor.core.publisher.Mono;
  * @author liuweilong
  * @description
  * @date 2019/6/3 13:51
+ * GatewayFilter，需要配置在具体的路由下面，只作用于当前路由
  */
 public class LwlFilter implements GatewayFilter, Ordered {
     private static final String REQUEST_TIME_BEGIN = "requestTimeBegin";
