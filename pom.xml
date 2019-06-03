@@ -24,6 +24,7 @@
         <module>demo-ribbon</module>
         <module>demo-server</module>
         <module>service-zuul</module>
+        <module>demo-gateway</module>
     </modules>
     <dependencyManagement>
         <dependencies>

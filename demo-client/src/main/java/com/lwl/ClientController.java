@@ -24,18 +24,21 @@ public class ClientController {
     private EurekaClient discoveryClient;
 
     @GetMapping("/serviceUrl")
-    public String serviceUrl(){
+    public String serviceUrl() {
         //可以获取到serviceUrl
         InstanceInfo instanceInfo = discoveryClient.getNextServerFromEureka("service-hi", false);
         return instanceInfo.getHomePageUrl();
     }
 
     @RequestMapping("/hi")
-    public String home(){
+    public String home() {
         return "port:" + port;
     }
 
-    @HystrixCommand(fallbackMethod = "defaultStores")   //出异常就调用defaultStores
+    /**
+     * 出异常就调用defaultStores
+     */
+    @HystrixCommand(fallbackMethod = "defaultStores")
     public Object getStores(Map<String, Object> parameters) {
         //do stuff that might fail
         return "success";
