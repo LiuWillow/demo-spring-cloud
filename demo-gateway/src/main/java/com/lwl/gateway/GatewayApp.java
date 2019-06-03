@@ -17,12 +17,12 @@ public class GatewayApp {
         SpringApplication.run(GatewayApp.class, args);
     }
 
-    @Bean
-    public RouteLocator myRoutes(RouteLocatorBuilder builder) {
-        return builder.routes()
-                .route(p -> p.path("/hi")  //hi都转发到http://192.168.103.111:7881/hi
-                        .filters(f -> f.addRequestHeader("Hello", "World"))
-                        .uri("http://192.168.103.111:7881"))
-                .build();
-    }
+//    @Bean
+//    public RouteLocator myRoutes(RouteLocatorBuilder builder) {
+//        return builder.routes()
+//                .route(p -> p.path("/hi")  //hi都转发到http://192.168.103.111:7881/hi
+//                        .filters(f -> f.addRequestHeader("Hello", "World"))
+//                        .uri("http://192.168.103.111:7881"))
+//                .build();
+//    }
 }

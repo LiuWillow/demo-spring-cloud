@@ -35,6 +35,11 @@ public class ClientController {
         return "port:" + port;
     }
 
+    @RequestMapping("/header/route")
+    public String headerRoute() {
+        return "header route port:" + port;
+    }
+
     /**
      * 出异常就调用defaultStores
      */
