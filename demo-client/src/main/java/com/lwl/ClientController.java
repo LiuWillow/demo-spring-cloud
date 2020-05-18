@@ -2,6 +2,7 @@ package com.lwl;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,8 +24,8 @@ public class ClientController {
     }
 
     @RequestMapping("/header/route")
-    public String headerRoute() {
-        return "header route port:" + port;
+    public String headerRoute(String lalal, @RequestBody String hah) {
+        return "header route port:" + port + "  " + lalal + "  " + hah;
     }
 
     /**

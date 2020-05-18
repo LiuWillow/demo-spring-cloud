@@ -14,7 +14,7 @@ import reactor.core.publisher.Mono;
  * @date 2019/6/3 14:19
  * GlobalFilter，不需要配置，作用在所有的路由上
  */
-@Service
+//@Service
 public class LwlGlobalFilter implements GlobalFilter, Ordered {
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {

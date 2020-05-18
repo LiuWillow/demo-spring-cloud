@@ -1,4 +1,4 @@
-package com.example.servicezuul;
+package com.example.servicezuul.config;
 
 import com.alibaba.fastjson.JSON;
 import com.netflix.zuul.ZuulFilter;
