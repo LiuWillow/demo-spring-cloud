@@ -1,10 +1,13 @@
-package com.lwl;
+package com.lwl.democlient.controller;
 
+import com.lwl.democlient.service.LazyService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -14,16 +17,19 @@ import java.util.Map;
  * @description
  */
 @RestController
+@Api(tags = "clientController哈哈哈")
+@ConditionalOnClass(LazyService.class)
 public class ClientController {
     @Value("${server.port}")
     private String port;
 
-    @RequestMapping("/hi")
+    @GetMapping("/hi")
+    @ApiOperation(value = "端口")
     public String home() {
         return "port:" + port;
     }
 
-    @RequestMapping("/header/route")
+    @GetMapping("/header/route")
     public String headerRoute(String lalal, @RequestBody String hah) {
         return "header route port:" + port + "  " + lalal + "  " + hah;
     }

@@ -1,9 +1,14 @@
-package com.lwl;
+package com.lwl.democlient;
 
+import com.spring4all.swagger.EnableSwagger2Doc;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.scheduling.annotation.EnableAsync;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 /**
  * @author lwl
  * @date 2018/7/8 17:06
@@ -12,8 +17,10 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableCircuitBreaker //开启hystrix
+@EnableAsync
+@EnableSwagger2Doc
 public class ClientApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(ClientApplication.class, args);
+		final ConfigurableApplicationContext run = SpringApplication.run(ClientApplication.class, args);
 	}
 }
