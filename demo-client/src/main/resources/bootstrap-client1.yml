@@ -1,0 +1,13 @@
+server:
+  port: 7881
+xxl:
+  job:
+    accessToken: ''
+    admin:
+      addresses: http://localhost:9980/xxl-job-admin
+    executor:
+      appname: service-hi
+      logpath: ${logging.path}/jobhandler
+      logretentiondays: 20
+      port: 9981
+      ip: localhost

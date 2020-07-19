@@ -1,5 +1,6 @@
 package com.lwl.democlient.controller;
 
+import com.lwl.democlient.config.Shit;
 import com.lwl.democlient.service.LazyService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import io.swagger.annotations.Api;
@@ -19,6 +20,7 @@ import java.util.Map;
 @RestController
 @Api(tags = "clientController哈哈哈")
 @ConditionalOnClass(LazyService.class)
+@Shit
 public class ClientController {
     @Value("${server.port}")
     private String port;

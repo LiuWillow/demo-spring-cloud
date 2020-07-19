@@ -1,0 +1,53 @@
+#任何模式启动都会读取的配置文件
+spring:
+  application:
+    name: service-websocket
+  #配置时间日期格式
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    default-property-inclusion: non_null
+# 日志保存的文件夹，配合logback.xml
+logging.file: ${log.path}/${spring.application.name}.log
+logging:
+  file:
+    max-size: '1024MB'
+    max-history: 20
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss.SSS} %level %tid %X{IDENTIFIER} %thread %X{URI} %logger[%method:%line] - %msg%n'
+    file: '%d{yyyy-MM-dd HH:mm:ss.SSS} %level %tid %X{IDENTIFIER} %thread %X{URI} %logger[%method:%line] - %msg%n'
+  level:
+    org.springframework.boot.autoconfigure: INFO
+
+management:
+  info:
+    defaults:
+      enabled: true
+  endpoint:
+    health:
+      show-details: always
+      info:
+        enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: info,health,metrics,httptrace,env,service-registry,prometheus
+      path-mapping:
+        health: health
+
+
+log:
+  path: ./log/service-websocket
+
+feign:
+  httpclient:
+    enabled: true
+
+ribbon:
+  OkToRetryOnAllOperations: false #对所有操作请求都进行重试,默认false
+  ReadTimeout: 5000   #负载均衡超时时间，默认值5000
+  ConnectTimeout: 2000 #ribbon请求连接的超时时间，默认值2000
+  MaxAutoRetries: 0     #对当前实例的重试次数，默认0
+  MaxAutoRetriesNextServer: 1 #对切换实例的重试次数，默认1
+server:
+  port: 9111

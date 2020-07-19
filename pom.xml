@@ -27,6 +27,8 @@
         <module>demo-server</module>
         <module>service-zuul</module>
         <module>demo-gateway</module>
+        <module>demo-webflux</module>
+        <module>demo-websocket</module>
     </modules>
     <dependencies>
         <dependency>
