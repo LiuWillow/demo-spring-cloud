@@ -20,7 +20,7 @@ import javax.annotation.Resource;
 @Configuration
 public class WSConfig implements WebSocketConfigurer {
     private static final int MAX_MESSAGE_SIZE = 65536 * 2;
-    private static final long MAX_IDLE = 60 * 60 * 1000;
+    private static final long MAX_IDLE = 1000 * 10;
 
     @Resource
     private LoginHandshakeInterceptor loginHandshakeInterceptor;
@@ -47,6 +47,7 @@ public class WSConfig implements WebSocketConfigurer {
 
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
+        //访问 ws://host:port/ws   就会进入  loginHandshakeInterceptor   -> testSocketHandler
         registry.addHandler(testSocketHandler, "/ws")
                 .setAllowedOrigins("*")
                 .addInterceptors(loginHandshakeInterceptor);
