@@ -26,7 +26,7 @@
         <guava.version>27.0.1-jre</guava.version>
         <alioss.version>3.8.0</alioss.version>
         <javax-validation.version>2.0.1.Final</javax-validation.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <slf4j-api.version>1.7.25</slf4j-api.version>
         <powermock.version>2.0.7</powermock.version>
         <jedis.version>3.1.0</jedis.version>
