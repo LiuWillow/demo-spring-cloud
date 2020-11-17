@@ -1,9 +1,9 @@
 package com.lwl.websocket.handler;
 
 import com.alibaba.fastjson.JSON;
-import com.lwl.websocket.common.CommonConst;
-import com.lwl.websocket.common.GlobalException;
-import com.lwl.websocket.common.UserInfoDTO;
+import com.lwl.common.CommonConst;
+import com.lwl.common.GlobalException;
+import com.lwl.common.UserInfoDTO;
 import com.lwl.websocket.constant.AttributeConst;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -97,7 +97,12 @@ public class TestSocketHandler extends TextWebSocketHandler {
 
     @Override
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
-
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < 65536 * 2; i++) {
+            stringBuilder.append("1");
+        }
+        System.out.println(stringBuilder.toString());
+        session.sendMessage(new TextMessage(stringBuilder.toString()));
     }
 
     @Override

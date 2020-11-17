@@ -10,11 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 @RestController
 public class Controller {
-    @Autowired
-    private HiService hiService;
+    @Autowired(required = false)
+    private HiClient hiClient;
 
     @GetMapping("/hi")
     public String hi(){
-        return hiService.serviceHi();
+        Long draftId = 1L;
+        return hiClient.serviceHi(new TestParam(), draftId);
+
     }
 }

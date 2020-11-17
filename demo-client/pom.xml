@@ -22,6 +22,21 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.lwl</groupId>
+            <artifactId>demo-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.teammark</groupId>
+            <artifactId>tm-commons</artifactId>
+            <version>2010-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis-reactive</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.xuxueli</groupId>
             <artifactId>xxl-job-core</artifactId>
             <version>2.1.2</version>
@@ -68,9 +83,23 @@
 
     <build>
         <plugins>
+
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                        <configuration>
+                        </configuration>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>com.lwl.democlient.ClientApplication</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>

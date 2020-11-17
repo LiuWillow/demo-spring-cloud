@@ -13,8 +13,12 @@ eureka:
 logging:
   path: ./log
   file: ./log/client.log
+
+log:
+    path: ./log
 swagger:
   base-package: com.lwl.democlient.controller
   title: shit
   version: 1.0
   enabled: true
+

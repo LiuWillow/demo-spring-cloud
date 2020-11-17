@@ -1,5 +1,6 @@
 package com.lwl.democlient.job;
 
+import com.lwl.common.GlobalException;
 import com.xxl.job.core.biz.model.ReturnT;
 import com.xxl.job.core.handler.annotation.XxlJob;
 import lombok.extern.slf4j.Slf4j;
@@ -16,6 +17,6 @@ public class TestHandler2 {
     @XxlJob("testHandler2")
     public ReturnT<String> testHandler(String params){
         log.info("------------开始执行");
-        return ReturnT.SUCCESS;
+        throw new GlobalException(1, "执行异常");
     }
 }

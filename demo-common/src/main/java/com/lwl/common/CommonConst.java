@@ -1,4 +1,4 @@
-package com.lwl.websocket.common;
+package com.lwl.common;
 
 /**
  * <p>Title: CommonConst</p>

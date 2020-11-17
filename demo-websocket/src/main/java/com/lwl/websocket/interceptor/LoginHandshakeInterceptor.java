@@ -1,13 +1,12 @@
 package com.lwl.websocket.interceptor;
 
+import com.lwl.common.CommonConst;
+import com.lwl.common.UserInfoDTO;
 import com.lwl.websocket.cache.LoginCache;
-import com.lwl.websocket.common.CommonConst;
-import com.lwl.websocket.common.UserInfoDTO;
 import com.lwl.websocket.constant.AttributeConst;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.stereotype.Component;

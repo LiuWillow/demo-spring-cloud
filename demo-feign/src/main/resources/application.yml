@@ -13,3 +13,8 @@ spring:
 
 ribbon:
   ServerListRefreshInterval: 5000
+  okhttp:
+    enabled: true
+feign:
+  okhttp:
+    enabled: true

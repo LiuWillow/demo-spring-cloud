@@ -2,7 +2,7 @@ package com.lwl.websocket.cache;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.lwl.websocket.common.UserInfoDTO;
+import com.lwl.common.UserInfoDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

@@ -58,6 +58,12 @@ spring:
             - Path=/api/hi/**
           filters:
             - StripPrefix=2 #前端请求 /api/hi/lalal 会被转发到service-hi下面的 /lalal 下面
+        - id: service-websocket
+          uri: lb://SERVICE-WEBSOCKET
+          predicates:
+            - Path=/ws/**
+          filters:
+            - StripPrefix=0 #前端请求 /ws 会被转发到service-websocket 下面的 /lalal 下面
   application:
     name: service-gateway
 eureka:

@@ -5,6 +5,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.ribbon.RibbonClient;
+import org.springframework.cloud.netflix.ribbon.RibbonClients;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.scheduling.annotation.EnableAsync;
 
@@ -21,5 +23,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 public class ClientApplication {
 	public static void main(String[] args) {
 		final ConfigurableApplicationContext run = SpringApplication.run(ClientApplication.class, args);
+//		final TestPublishService service = run.getBean(TestPublishService.class);
+//		service.publish();
 	}
 }

@@ -7,7 +7,8 @@ xxl:
       addresses: http://localhost:9980/xxl-job-admin
     executor:
       appname: service-hi
-      logpath: ${logging.path}/jobhandler
+      logpath: ${log.path}/jobhandler
       logretentiondays: 20
       port: 9981
       ip: localhost
+

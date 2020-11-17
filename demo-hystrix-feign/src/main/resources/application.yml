@@ -1,3 +1,15 @@
 spring:
   profiles:
     active: server1
+feign:
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
+
+ribbon:
+  okhttp:
+    enabled: true
+  http:
+    client:
+      enabled: false
